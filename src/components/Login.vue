@@ -25,8 +25,8 @@ export default {
   data () {
     return {
       loginForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       },
       loginFormRules: {
         username: [
@@ -45,12 +45,20 @@ export default {
       this.$refs.loginFormRef.resetFields()
     },
     login () { // 表单的预验证：验证表单中的所有项是否已输入正确
-      this.$refs.loginFormRef.validate(async valid => {
-        if (!valid) return
-        // 由于res返回数据字段太多，将res数据当中的data数据拿到手
-        const { data: res } = await this.$http.post('login', this.loginForm)
-        if (res.meta.status !== 200) return window.console.log('登录失败')
-      })
+      // 以下为控台请求 如果有后台可以用下列代码
+      // this.$refs.loginFormRef.validate(async valid => {
+      //   if (!valid) return
+      //   // 由于要调用res下data下的属性，所以需要把data声明出来，'login'是后台的login地址不是本项目的login地址
+      //   const { data: res } = await this.$http.post('login', this.loginForm)
+      //   if (res.meta.status !== 200) return this.$message.error('登录失败')
+      //   this.$message.success('登录成功')
+      //   // 保存服务端发来的token
+      //   window.sessionStorage.setItem('token', res.data.token)
+      //   // 跳转页面
+      //   this.$router.push('/home')
+      // })
+      // 以下为静态请求
+      this.$router.push('/home')
     }
   }
 }
