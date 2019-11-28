@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { Button, Form, FormItem, Input, Message, Container, Header, Aside, Main, Menu,
   MenuItem, Submenu, Breadcrumb, BreadcrumbItem, Card, Row, Col, Table, TableColumn,
-  Switch, Pagination, Dialog, MessageBox } from 'element-ui'
+  Switch, Pagination, Dialog, MessageBox, Tag, Tree } from 'element-ui'
 
 Vue.use(Button)
 Vue.use(Form)
@@ -24,6 +24,8 @@ Vue.use(TableColumn)
 Vue.use(Switch)
 Vue.use(Pagination)
 Vue.use(Dialog)
+Vue.use(Tag)
+Vue.use(Tree)
 // message组件比较特殊，需要赋值一个自定义的变量中
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm

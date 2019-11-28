@@ -341,7 +341,7 @@ export default {
     },
     // 以下为动态删除
     // async remove(id) {
-    //   await this.$confirm('是否删除该用户?', '提示', {
+    //   const confirmResult = await this.$confirm('是否删除该用户?', '提示', {
     //     confirmButtonText: '确定',
     //     cancelButtonText: '取消',
     //     type: 'warning'
